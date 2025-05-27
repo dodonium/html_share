@@ -15,31 +15,55 @@
       margin-bottom: 1.5em;
       letter-spacing: 0.05em;
     }
-    .link-list {
-      list-style: none;
-      padding: 0;
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      max-width: 900px;
+      margin: 3em auto 0;
     }
-    .link-list li {
-      margin: 1em 0;
+    .image-card {
+      text-align: center;
     }
-    .link-list a {
-      text-decoration: none;
+    .image-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .image-card img:hover {
+      transform: scale(1.02);
+    }
+    .image-card-title {
+      margin-top: 0.5em;
+      font-size: 1.1em;
       color: #2a5d9f;
-      font-size: 1.2em;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-    .link-list a:hover {
-      border-color: #2a5d9f;
     }
   </style>
 </head>
 <body>
   <h1>Simulation Results</h1>
-  <ul class="link-list">
-    <li><a href="./genes/">Genes</a></li>
-    <li><a href="./cultures/">Cultures</a></li>
-    <li><a href="./languages/">Languages</a></li>
-  </ul>
+
+  <div class="image-grid">
+    <div class="image-card">
+      <a href="./genes/">
+        <img src="images/genes.png" alt="Genes result">
+        <div class="image-card-title">Genes</div>
+      </a>
+    </div>
+    <div class="image-card">
+      <a href="./cultures/">
+        <img src="images/cultures.png" alt="Cultures result">
+        <div class="image-card-title">Cultures</div>
+      </a>
+    </div>
+    <div class="image-card">
+      <a href="./languages/">
+        <img src="images/languages.png" alt="Languages result">
+        <div class="image-card-title">Languages</div>
+      </a>
+    </div>
+  </div>
 </body>
 </html>
