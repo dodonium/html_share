@@ -1,0 +1,81 @@
+---
+layout: default
+title: pages
+---
+
+<style>
+  .wrapper,
+  .container,
+  .site {
+    max-width: 540px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box;
+  }
+
+  main,
+  .page-content,
+  .post-content {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .page-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-container h1 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 0 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eaeaea;
+    line-height: 1.2;
+  }
+
+  .page-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+  }
+  .page-list li {
+    border-bottom: 1px solid #eaeaea;
+  }
+  .page-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  .page-list a:hover {
+    opacity: 0.6;
+  }
+  .page-list .page-url {
+    font-size: 0.8rem;
+    color: #999;
+    font-family: monospace;
+    margin-left: 1rem;
+  }
+</style>
+
+<div class="page-container">
+  <h1>📂 Pages</h1>
+
+  <ul class="page-list">
+    {% for page in site.pages %} {% if page.title and page.url != "/" %}
+    <li>
+      <a href="{{ site.baseurl }}{{ page.url }}">
+        <span class="page-title">{{ page.title }}</span>
+        <span class="page-url">{{ page.url }}</span>
+      </a>
+    </li>
+    {% endif %} {% endfor %}
+  </ul>
+</div>

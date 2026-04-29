@@ -1,0 +1,96 @@
+---
+title: history
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>世界史比較ツール</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- PC Specific Controls (Hidden on Mobile) -->
+    <div class="pc-controls-container">
+      <div class="controls">
+        <div class="side-panel left-panel">
+          <div id="pc-left-tags" class="tags-container"></div>
+          <div class="add-select-wrapper">
+            <select id="pc-left-add" aria-label="左側に追加"></select>
+            <div class="add-icon">＋</div>
+          </div>
+        </div>
+
+        <div class="vs-divider"></div>
+
+        <div class="side-panel right-panel">
+          <div id="pc-right-tags" class="tags-container"></div>
+          <div class="add-select-wrapper">
+            <select id="pc-right-add" aria-label="右側に追加"></select>
+            <div class="add-icon">＋</div>
+          </div>
+        </div>
+      </div>
+      <button id="btn-edit-pc" class="json-btn-pc">データ編集</button>
+    </div>
+
+    <!-- Timeline Wrapper -->
+    <div id="timeline-wrapper">
+      <div id="timeline-container">
+        <div class="axis-line"></div>
+      </div>
+    </div>
+
+    <!-- Mobile UI Elements -->
+    <div class="fab" id="fabBtn"></div>
+
+    <div class="menu-overlay" id="menuOverlay">
+      <div class="menu-container">
+        <div class="menu-header">
+          <h2 class="menu-title">選択メニュー</h2>
+          <button class="header-edit-btn" id="btn-edit-mobile">JSON編集</button>
+        </div>
+
+        <div class="columns-wrapper">
+          <div class="column">
+            <div class="column-header">左側</div>
+            <div class="badges-container" id="mobileBadgesLeft"></div>
+            <ul class="options-list" id="mobileListLeft"></ul>
+          </div>
+
+          <div class="column">
+            <div class="column-header">右側</div>
+            <div class="badges-container" id="mobileBadgesRight"></div>
+            <ul class="options-list" id="mobileListRight"></ul>
+          </div>
+        </div>
+
+        <div class="menu-footer">
+          <button class="footer-close-btn" id="closeMenuBtn">閉じる</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shared Editor Modal -->
+    <div id="editor-modal">
+      <div class="modal-content">
+        <h3>データの編集・追加 (JSON形式)</h3>
+        <p style="font-size: 0.8rem; color: #666">
+          形式:
+          <code
+            >{ "年表名A": [ { "year": 数値, "title": "...", "lead": "...",
+            "desc": "..." }, ... ], ... }</code
+          >
+        </p>
+        <textarea id="json-input"></textarea>
+        <div class="modal-actions">
+          <button id="btn-cancel">キャンセル</button>
+          <button id="btn-save">反映する</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
